@@ -1,0 +1,80 @@
+{{!< default}}
+{{#get "posts" filter="featured:true+page:[true,false]" as |featured|}}
+<div class="top-wrap">
+	<section class="title-wrap">
+		<div class="top-social">
+			{{#if @blog.facebook}}
+			<a href="{{facebook_url}}"><i class="facebook"></i></a>
+			{{/if}}
+			{{#if @blog.twitter}}
+			<a href="{{twitter_url}}"><i class="twitter"></i></a>
+			{{/if}}
+			{{>socialicons}}
+		</div>
+		<div class="{{#if featured}}is-featured {{else}}no-featured {{/if}}bg-top{{#if @blog.cover_image}} is-cover" style="background-image: url({{@blog.cover_image}}){{/if}}">
+			{{#if @blog.description}}
+				<div class="fuckingcontent">
+					<h1 class="title">{{@blog.description}}</h1>
+					{{/if}}
+					<h2 class="description">{{>description}}</h2>
+				</div>
+		</div>
+		{{#if featured}}
+		<div class="featured-wrap">
+			<div class="bg-medium">
+				{{#featured}}
+				{{#if @first}}
+				<div class="vertical text-featured">
+					<div class="text rotate">
+						{{t "Featured"}}
+					</div>
+				</div>
+				{{/if}}
+				<div class="featured-flex">
+					{{#if feature_image}}
+					<div class="left{{#if @first}} first{{/if}}">
+						<div class="appear">
+							<a href="{{url}}"><div class="featured-image featured-home-image" style="background-image: url({{feature_image}})"></div></a>
+						</div>
+					</div>
+					<div class="right{{#if @first}} first{{/if}}">
+						<article class="featured-post-wrap">
+							<div class="featured-post">
+								<h2><a href="{{url}}">{{title}}</a></h2>
+								<div class="item-excerpt">
+									<p>{{excerpt words="55"}} <a href="{{url}}">[...]</a></p>
+								</div>
+								<a href="{{url}}"><span class="featured-more-button">{{t "Read more"}}</span></a>
+							</div>
+						</article>
+					</div>
+					{{else}}
+					<div class="center{{#if @first}} first{{/if}}">
+						<article class="featured-post-wrap">
+							<div class="featured-post">
+								<h2><a href="{{url}}">{{title}}</a></h2>
+								<div class="item-excerpt">
+									<p>{{excerpt words="55"}} <a href="{{url}}">[...]</a></p>
+								</div>
+								<a href="{{url}}"><span class="featured-more-button">{{t "Read more"}}</span></a>
+							</div>
+						</article>
+					</div>
+					{{/if}}
+				</div>
+				{{/featured}}
+			</div>
+			<div class="bg-bottom"></div>
+		</div>
+		{{/if}}
+		<div class="{{#if featured}}is-featured {{/if}}vertical text-posts">
+			<div class="text rotate">
+				{{t "Articles"}}
+			</div>
+		</div>
+	</section>
+</div>
+{{/get}}
+{{>loop}}
+{{pagination}}
+{{>newsletter}}

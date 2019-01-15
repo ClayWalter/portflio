@@ -1,0 +1,33 @@
+{{!< default}}
+{{#author}}
+<div class="top-wrap">
+	<section class="title-wrap">
+		<div class="no-featured bg-top{{#if cover_image}} is-cover" style="background-image: url({{cover_image}}){{/if}}">
+			<div class="author-wrap">
+				{{#if profile_image}}
+				<div class="author-image-top item-image" style="background-image: url({{profile_image}})"></div>
+				{{/if}}
+				<div class="author">
+					<h1 class="title">{{name}}</h1>
+					<div class="author-social">
+						{{#if website}} <a href="{{website}}"><i class="icons link"></i></a>{{/if}}
+						{{#if facebook}} <a href="{{facebook_url}}"><i class="icons facebook"></i></a>{{/if}}
+						{{#if twitter}} <a href="{{twitter_url}}"><i class="icons twitter"></i></a>{{/if}}
+					</div>
+				</div>
+				{{#if bio}}
+				<h2 class="description">{{bio}}</h2>
+				{{/if}}
+			</div>
+		</div>
+		<div class="vertical text-posts">
+			<div class="text rotate">
+				{{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+			</div>
+		</div>
+	</section>
+</div>
+{{/author}}
+{{>loop}}
+{{pagination}}
+{{>newsletter}}

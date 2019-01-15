@@ -1,0 +1,19 @@
+<aside class="prev-next{{^next_post}} first{{/next_post}}{{^prev_post}} last{{/prev_post}}{{#if featured}} featured{{/if}}{{^if @labs.subscribers}} no-subscribe{{/if}}">
+    {{#next_post}}
+    <section class="prev-post">
+        <div class="prev-text">
+            <span>{{t "Newer Post"}}</span>
+            <a href="{{url}}"><h3>{{title}}</h3></a>
+        </div>
+    </section>
+    {{/next_post}}
+    <div class="prev-next-hr"></div>
+    {{#prev_post}}
+    <section class="next-post">
+        <div class="next-text">
+            <span>{{t "Older Post"}}</span>
+            <a href="{{url}}"><h3>{{title}}</h3></a>
+        </div>
+    </section>
+    {{/prev_post}}
+</aside>

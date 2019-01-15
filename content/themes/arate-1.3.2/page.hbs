@@ -1,0 +1,28 @@
+{{!< default}}
+{{#post}}
+<div class="post-wrap{{#if feature_image}} is-image{{else}} no-image{{/if}}">
+	<div class="top-wrap">
+		<section class="title-wrap">
+			<div class="top-social">
+				{{#if @blog.facebook}}
+				<a href="{{facebook_url}}"><i class="facebook"></i></a>
+				{{/if}}
+				{{#if @blog.twitter}}
+				<a href="{{twitter_url}}"><i class="twitter"></i></a>
+				{{/if}}
+				{{>socialicons}}
+			</div>
+			<div class="bg-top">
+				<h1 class="title">{{{title}}}</h1>
+			</div>
+			{{#if feature_image}}
+			<div class="featured-post-image" style="background-image: url({{feature_image}})"></div>
+			{{/if}}
+		</section>
+	</div>
+	<div class="post-content">
+		{{content}}
+	</div>
+	{{/post}}
+</div>
+{{>newsletter}}

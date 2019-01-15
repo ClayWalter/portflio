@@ -1,0 +1,15 @@
+{{#if @labs.subscribers}}
+<div class="subscribe-wrap">
+	<div class="vertical text-newsletter">
+		<div class="text rotate">
+			{{t "Newsletter"}}
+		</div>
+	</div>
+	<div class="subscribe">
+		<div class="gh-subscribe">
+			<div class="text-subscribe">{{{t "Subscribe to our newsletter"}}}</div>
+			{{subscribe_form placeholder=(t "Your email address")}}
+		</div>
+	</div>
+</div>
+{{/if}}

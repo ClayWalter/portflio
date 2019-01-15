@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{lang}}">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{{meta_title page=(t "meta-page")}}</title>
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,800,900|Spectral:400&amp;subset=latin-ext" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}">
+		<link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}">
+		<link rel="stylesheet" type="text/css" href="{{asset "css/icons.css"}}">
+		<script src="https://unpkg.com/scrollreveal"></script>
+		{{ghost_head}}
+	</head>
+	<body class="{{body_class}}">
+		<div class="site-wrap">
+			{{>header}}
+			{{{body}}}
+			{{>footer}}
+		</div>
+		<script src="{{asset "js/global.js"}}"></script>
+		{{#is "post, page"}}
+		<script src="{{asset "js/post.js"}}"></script>
+		{{/is}}
+		{{^is "post, page"}}
+		<script src="{{asset "js/home.js"}}"></script>
+		{{/is}}
+		{{ghost_foot}}
+	</body>
+</html>

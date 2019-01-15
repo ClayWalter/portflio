@@ -1,0 +1,60 @@
+{{!< default}}
+{{#post}}
+<div class="post-wrap{{^if feature_image}} no-image{{/if}}">
+	<div class="top-wrap">
+		<section class="title-wrap">
+			<div class="top-social">
+				{{#if @blog.facebook}}
+				<a href="{{facebook_url}}"><i class="facebook"></i></a>
+				{{/if}}
+				{{#if @blog.twitter}}
+				<a href="{{twitter_url}}"><i class="twitter"></i></a>
+				{{/if}}
+				{{>socialicons}}
+			</div>
+			<div class="bg-top">
+				<h1 class="title">{{{title}}}</h1>
+				<div class="item-meta author-name">
+					{{authors}}
+					<br>
+					<time datetime="{{date format="YYYY-MM-DD"}}"> {{t "Published"}} {{date published_at timeago="true"}}</time><br>
+				<div class="post-meta">
+				{{#if tags}}
+					<div class="tags">
+					{{tags separator=" / "}}
+					</div>
+					{{/if}}
+				</div>
+				</div>
+				
+			</div>
+			{{#if feature_image}}
+			<div class="featured-post-image" style="background-image: url({{feature_image}})"></div>
+			{{/if}}
+		</section>
+	</div>
+	<div class="post-content">
+		{{content}}
+		<div class="post-meta">
+			{{#if tags}}
+			<div class="tags">
+				{{tags separator=" / "}}
+			</div>
+			{{/if}}
+			<div class="post-share">
+				<a href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+					onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="twitter"></i>
+				</a><a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+				onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="facebook"></i>
+			</a><a href="https://plus.google.com/share?url={{url absolute="true"}}"
+		onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="google-plus"></i></a>
+	</div>
+</div>
+</div>
+</div>
+{{>prevnext}}
+<div class="disqus">
+{{>disqus}}
+</div>
+{{/post}}
+{{>newsletter}}
