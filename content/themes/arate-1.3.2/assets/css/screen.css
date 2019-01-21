@@ -363,12 +363,14 @@ a:hover,
 /* Gradients
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .bg-top,
-.bg-bottom,
 .vertical,
 .prev-next-hr,
 blockquote:before,
 .subscribe {
     background-image: linear-gradient(58deg, #131755 0%, #1a1370 47%, #1207ac 100%);
+}
+.bg-bottom {
+background-image: linear-gradient(58deg, #131755 0%, #1a1370 47%, #1207ac 100%);
 }
 
 .bg-medium {
@@ -448,7 +450,7 @@ blockquote:before,
     }
 
     .logo-image img {
-        height: 40px;
+        height: 96px;
     }
 
     .header-wrap {
@@ -879,6 +881,8 @@ blockquote:before,
 
 .featured-home-image {
     height: 630px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
 
 .bg-medium {

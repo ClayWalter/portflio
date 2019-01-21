@@ -21,7 +21,7 @@ window.sr = ScrollReveal({
     easing: 'ease-in-out',
     delay: 50,
     mobile: true,
-    reset: false
+
 });
 
 sr.reveal('.featured-flex', {
@@ -69,8 +69,8 @@ sr.reveal('.fuckingcontent', {
     opacity: 0,
     delay: 50,
     easing: 'ease-in-out',
+    reset: true,
     duration: 150
-    
 });
 
 

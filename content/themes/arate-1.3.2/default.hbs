@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}">
 		<link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}">
 		<link rel="stylesheet" type="text/css" href="{{asset "css/icons.css"}}">
+		<link rel="stylesheet" type="text/css" href="{{asset "css/nav.css"}}">
 		<script src="https://unpkg.com/scrollreveal"></script>
 		{{ghost_head}}
 	</head>
@@ -23,6 +24,9 @@
 		<script src="{{asset "js/global.js"}}"></script>
 		{{#is "post, page"}}
 		<script src="{{asset "js/post.js"}}"></script>
+		{{/is}}
+		{{^is "post, page"}}
+		<script src="{{asset "js/nav.js"}}"></script>
 		{{/is}}
 		{{^is "post, page"}}
 		<script src="{{asset "js/home.js"}}"></script>
